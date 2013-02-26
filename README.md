@@ -1,5 +1,5 @@
 spbu_homework
-jaja
+hello world!
 =============
 
 my_homeworks
