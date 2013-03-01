@@ -7,14 +7,18 @@ Parser::Parser(char *ch) {
     brCounter = 0;
 }
 
+bool isSign(char ch) {
+    return (ch == '-') || (ch == '+');
+}
+
 bool Parser::isCorrectExpression() {
+    if (isSign(*string))
+        string++;
     return addition();
 }
 
 bool Parser::isNumber() {
     bool isNum = false;
-    if (*string == '+' || *string == '-')
-       string++;
     if (isdigit(*string))
         isNum = true;
     while (isdigit(*string))
@@ -43,6 +47,8 @@ bool Parser::bracket() {
     if (*string == '(') {
         brCounter++;
         string++;
+        if (isSign(*string))
+            string++;
         if (!addition())
             return false;
         if (*string == 0)
