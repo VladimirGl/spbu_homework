@@ -1,8 +1,7 @@
 #include <iostream>
+#include <float.h>
 
-#include "arrayStack.h"
-#include "stringParser.h"
-#include "translateIntoPolish.h"
+#include "stackCalculate.h"
 
 using namespace std;
 
@@ -22,6 +21,14 @@ void testArrayStack() {
     delete object;
 }
 
+void testCalculate() {
+    char string[255];
+    cin >> string;
+    PostfixCalculator *object = new PostfixCalculator(array, string);
+    cout << object->calculate();
+    delete object;
+}
+/*
 void testParser() {
     cout << "testParser and translator\n";
     char string[255];
@@ -37,11 +44,12 @@ void testParser() {
     }
     delete objectq;
 }
-
-
+*/
 int main() {
+    cout << "asd" << (int)'\0' << endl;
     testArrayStack();
-    testParser();
+    testCalculate();
+//    testParser();
     int i = 0;
     cin >> i;
     return 0;

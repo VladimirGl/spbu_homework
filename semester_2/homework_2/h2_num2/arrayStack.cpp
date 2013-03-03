@@ -7,9 +7,9 @@ using namespace std;
 ArrayStack::ArrayStack() {
     arraySize = 50;
     arrayCounter = 0;
-    arrayStack = new int*[arraySize];
+    arrayStack = new double*[arraySize];
     for (int i = 0; i < arraySize; i++)
-        arrayStack[i] = new int[2];
+        arrayStack[i] = new double[2];
     for (int i = 0; i < arraySize; i++) {
             arrayStack[i][0] = 0;
             arrayStack[i][1] = -1;
@@ -31,9 +31,9 @@ int ArrayStack::findHole() const {
 
 void ArrayStack::increaseArray() {
     int newSize = arraySize * 2;
-    int **newArray = new int*[newSize];
+    double **newArray = new double*[newSize];
     for (int i = 0; i < newSize; i++)
-        newArray[i] = new int[2];
+        newArray[i] = new double[2];
     for (int i = 0; i < arraySize; i++) {
         newArray[i][0] = arrayStack[i][0];
         newArray[i][1] = arrayStack[i][1];
@@ -50,7 +50,7 @@ void ArrayStack::increaseArray() {
     return;
 }
 
-void ArrayStack::push(int value) {
+void ArrayStack::push(double value) {
     if (isEmpty()) {
         arrayStack[1][0] = value;
         arrayStack[1][1] = 0;
@@ -69,12 +69,12 @@ void ArrayStack::push(int value) {
     return;
 }
 
-int ArrayStack::top() const {
+double ArrayStack::top() const {
     if (isEmpty()) {
         cout << "Stack is empty!";
         return INT_MAX;
     }
-    return arrayStack[arrayStack[0][1]][0];
+    return arrayStack[(int)arrayStack[0][1]][0];
 }
 
 void ArrayStack::pop() {
@@ -82,7 +82,7 @@ void ArrayStack::pop() {
         cout << "Stack is empty!";
         return;
     }
-    int popedIndex = arrayStack[0][1];
+    int popedIndex = (int)arrayStack[0][1];
     arrayStack[0][1] = arrayStack[popedIndex][1];
     arrayStack[popedIndex][0] = 0;
     arrayStack[popedIndex][1] = -1;
@@ -94,7 +94,3 @@ ArrayStack::~ArrayStack() {
         delete[] arrayStack[i];
     delete[] arrayStack;
 }
-
-
-
-    

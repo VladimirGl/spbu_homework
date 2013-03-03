@@ -39,16 +39,27 @@ bool TranslateIntoPolish::isOperator() const {
     return false;
 }
 
+void addSign(char *&inString, char *&outString, int &counter) {    
+   if (*inString == '+')
+        inString++;
+    else if (*inString == '-') {
+            outString[counter] = '-';
+            counter++;
+            inString++;
+    }
+}
+
 char *TranslateIntoPolish::translator() {
     char *outString = new char[500];
     for (int i = 0; i < 500; i++) 
         outString[i] = 0;
     int counter = 0;
-    int len = strlen(inString);
-    while (*inString != 0) {
+    addSign(inString, outString, counter);
+    while (*inString != '\0') {
         if (*inString == '(') {
             stack->push((int)*inString);
             inString++;
+            addSign(inString, outString, counter);
         } else {
             if (isOperator()) {
                 while (!(stack->isEmpty()) && (priority(stack->top()) > priority((int)*inString))) {

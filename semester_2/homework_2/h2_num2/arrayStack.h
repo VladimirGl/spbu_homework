@@ -2,16 +2,17 @@
 
 #include "stack.h"
 
+
 class ArrayStack: public Stack {
 public:
     ArrayStack();
-    void push(int value);
+    void push(double value);
     void pop();
-    int top() const;
+    double top() const;
     bool isEmpty() const;
     ~ArrayStack();
 protected:
-    int **arrayStack;
+    double **arrayStack;
     int arrayCounter;
     int arraySize;
     int findHole() const;
