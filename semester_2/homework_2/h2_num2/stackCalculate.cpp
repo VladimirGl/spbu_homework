@@ -1,5 +1,6 @@
 #include <iostream>
 #include <float.h>
+#include <string.h>
 
 #include "stackCalculate.h"
 
@@ -12,7 +13,7 @@ PostfixCalculator::PostfixCalculator(StackType type, char *ch) {
             break;
         }
         case (pointer): {
-//            stack = new PointerStack;
+            stack = new PointerStack;
             break;
         }
     }
@@ -53,7 +54,6 @@ int state(string ch) {
 
 double PostfixCalculator::calculate() {
     if (!isExpression) {
-        cout << "Bad expression\n";
         return (DBL_MAX);
     }
     char *ch = readToSpace();   

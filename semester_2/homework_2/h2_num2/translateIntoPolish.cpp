@@ -13,7 +13,7 @@ TranslateIntoPolish::TranslateIntoPolish(StackType type, char *ch) {
             break;
         }
         case (pointer): {
-//            stack = new PointerStack;
+            stack = new PointerStack;
             break;
         }
     }

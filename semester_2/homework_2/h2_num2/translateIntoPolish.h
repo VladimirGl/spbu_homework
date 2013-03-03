@@ -1,7 +1,7 @@
 #pragma once
 
 #include "arrayStack.h"
-//#include "pointerStack.h"
+#include "pointerStack.h"
 
 class TranslateIntoPolish {
 public:
