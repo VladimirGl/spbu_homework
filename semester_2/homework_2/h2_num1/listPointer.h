@@ -2,10 +2,6 @@
 
 #include "list.h"
 
-struct ListElement {
-    int value;
-    ListElement *next;
-};
 
 class PointerList: public List {
 public:
@@ -18,6 +14,16 @@ public:
     void print() const;
     ~PointerList();
 protected:
+    struct ListElement {
+        int value;
+        ListElement *next;
+            
+        ListElement(ListElement * nextElement, int x = 0) :
+            value(x),
+            next(nextElement)
+        {}
+    };
+    ListElement *createElement(int value, ListElement *pointer);
     ListElement *list;
     int memberCounter;
 };

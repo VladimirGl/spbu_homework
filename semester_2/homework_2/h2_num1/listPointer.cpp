@@ -1,15 +1,8 @@
 #include "listPointer.h"
 
 PointerList::PointerList() {
-    list = NULL;
     memberCounter = 0;
-}
-
-ListElement *createElement(int value, ListElement *pointer) {
-    ListElement *temp = new ListElement;
-    temp->value = value;
-    temp->next = pointer;
-    return temp;
+    list = NULL;
 }
 
 bool PointerList::isEmpty() const {
@@ -18,7 +11,7 @@ bool PointerList::isEmpty() const {
 
 void PointerList::addValueInPos(int value, int position) {
     if (isEmpty()) {
-        list  = createElement(value, NULL);
+        list = new ListElement(NULL, value);
         memberCounter++;
         return;
     }
@@ -27,7 +20,7 @@ void PointerList::addValueInPos(int value, int position) {
     ListElement *temp = list;
     for (int i = 1; i < (position - 1); i++)
         temp = temp->next;
-    ListElement *newElement = createElement(value, temp->next);
+    ListElement *newElement = new ListElement(temp->next, value);
     temp->next = newElement;
     memberCounter++;
 }
@@ -91,7 +84,3 @@ PointerList::~PointerList() {
     }
     delete list;
 }
-    
-        
-        
-     

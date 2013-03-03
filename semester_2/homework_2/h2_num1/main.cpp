@@ -42,6 +42,7 @@ void testAddPointer() {
     for (int i = 1; i <= 70; i++) {
         object->addValueInPos(i, (71 - i));
     }
+    object->addValueInPos(222, 1);
     object->print();
     cout << endl;
     delete object;
@@ -72,8 +73,6 @@ int main() {
     testRemoveArray();
     testAddPointer();
     testRemovePointer();
-    List* object = new PointerList;
-    cin.get();
-    cin.get();    
+    cin.get();  
     return 0;
- }
+}
