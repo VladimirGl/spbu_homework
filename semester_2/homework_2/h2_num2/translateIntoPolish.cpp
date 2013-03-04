@@ -23,7 +23,7 @@ TranslateIntoPolish::TranslateIntoPolish(StackType type, char *ch) {
 int TranslateIntoPolish::priority(int a) const {
     char ch = (char)a;
     if (ch == '*') return 4;
-    if (ch == '/') return 4;
+    if (ch == '/') return 5;
     if (ch == '+') return 2;
     if (ch == '-') return 3;
     if (ch == '(') return 1; 
