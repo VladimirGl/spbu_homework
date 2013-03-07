@@ -1,5 +1,6 @@
 #include <iostream>
 #include <float.h>
+#include <stdlib.h>
 #include <string.h>
 
 #include "stackCalculate.h"
