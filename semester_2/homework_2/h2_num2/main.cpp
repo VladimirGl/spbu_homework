@@ -16,7 +16,8 @@ int main() {
         return 1;
     }
     cout << "\nEnter the expression\n"
-            "You can use '+','-','*','/', brackets and integer numbers:\n";
+            "You can use '+','-','*','/', brackets and integer numbers:\n"
+            "Don't use spaces\n";
     char string[255];
     cin >> string;
     PostfixCalculator *object = new PostfixCalculator((StackType)type, string);

@@ -6,7 +6,6 @@ using namespace std;
 
 class List {
 public:
-    List() {};
     virtual void addValueInPos(int value, int position) = 0;
     virtual void removeValue(int value) = 0;
     virtual bool isContained(int value) const = 0;

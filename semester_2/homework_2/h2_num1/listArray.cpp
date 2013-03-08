@@ -69,7 +69,7 @@ void ArrayList::addValueInPos(int value, int position) {
     return;
 }
 
-bool ArrayList::isContained(int value) {
+bool ArrayList::isContained(int value) const {
     if (isEmpty())
         return false;
     int currentIndex = arrayList[0][1];

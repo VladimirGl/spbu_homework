@@ -7,7 +7,6 @@ enum StackType {
 
 class Stack {
 public:
-    Stack() {}
     virtual void push(double value) = 0;
     virtual void pop() = 0;
     virtual double top() const = 0;
