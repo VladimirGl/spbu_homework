@@ -4,6 +4,6 @@
 
 void ConsolePrint::print() const
 {
-    for (int i = 0; i < (matrixSize * matrixSize); i++)
+    for (int i = 0; i < (arraySize); i++)
         std::cout << spiralArray[i] << " ";
 }

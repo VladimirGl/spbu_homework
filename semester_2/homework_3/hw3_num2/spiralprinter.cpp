@@ -13,8 +13,9 @@ SpiralPrinter::SpiralPrinter(int **matrix, int size)
     for (int i = 1; i <= matrixSize; i++)
         for (int j = 1; j <= matrixSize; j++)
             inMatrix[i][j] = matrix[i][j];
-    spiralArray = new int[matrixSize * matrixSize];
-    for (int i = 0; i < matrixSize * matrixSize; i++)
+    arraySize = matrixSize * matrixSize;
+    spiralArray = new int[arraySize];
+    for (int i = 0; i < arraySize; i++)
         spiralArray[i] = 0;
     doSpiral();
 }

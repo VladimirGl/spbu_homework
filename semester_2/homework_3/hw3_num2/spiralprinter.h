@@ -11,6 +11,7 @@ protected:
     int **inMatrix;
     int *spiralArray;
     int matrixSize;
+    int arraySize;
 private:
     void doSpiral();
 };
