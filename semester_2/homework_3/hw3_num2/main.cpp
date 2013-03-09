@@ -28,9 +28,9 @@ int main()
     }
 
     int counter = 10;
-    int **matrix = new int*[size];
+    int **matrix = new int*[size + 1];
     for (int i = 1; i <= size; i++)
-        matrix[i] = new int[size];
+        matrix[i] = new int[size + 1];
     for (int i = 1; i <= size; i++)
         for (int j = 1; j <= size; j++)
         {
