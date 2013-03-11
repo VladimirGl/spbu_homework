@@ -13,7 +13,7 @@ void BSort::bubbleSort()
     while (!isSorted)
     {
         isSorted = true;
-        for (int i = 0; i < arraySize; i++)
+        for (int i = 0; i < arraySize - 1; i++)
             if (inArray[i] > inArray[i + 1])
             {
                 std::swap(inArray[i], inArray[i + 1]);
