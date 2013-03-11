@@ -4,6 +4,15 @@
 #include "consoleprint.h"
 #include "fileprint.h"
 
+/**
+ * @file main.cpp
+ * @author  Vladimir Glazachev <glazachev.vladimir@gmail.com>
+ *
+ * @section DESCRIPTION
+ *
+ * This is a program, that print matrix at round it on a spiral.
+ */
+
 int main()
 {
     std::cout << "This program print array elements at round it on a spiral, since the center\n"
@@ -13,11 +22,13 @@ int main()
 
     int type = 0;
     std::cin >> type;
+
     if (!(type == 1 || type == 2)) {
         std::cin.get();
         std::cout << "Bad type!\n";
         return 1;
     }
+
     std::cout << "Enter the N -";
     int size = 0;
     std::cin >> size;
@@ -31,6 +42,7 @@ int main()
     int **matrix = new int*[size + 1];
     for (int i = 1; i <= size; i++)
         matrix[i] = new int[size + 1];
+
     for (int i = 1; i <= size; i++)
         for (int j = 1; j <= size; j++)
         {
@@ -45,6 +57,7 @@ int main()
             std::cout << matrix[i][j] << " ";
         std::cout << std::endl;
     }
+
     SpiralPrinter *object;
     if (type == 1)
     {
@@ -63,5 +76,6 @@ int main()
         delete[] matrix[i];
     delete[] matrix;
     delete object;
+
     return 0;
 }
