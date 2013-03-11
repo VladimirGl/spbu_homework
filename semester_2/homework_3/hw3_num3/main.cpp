@@ -55,6 +55,7 @@ int main()
     for (int i = 0; i < width; i++)
         delete[] matrix[i];
     delete[] matrix;
+    delete object;
 
     std::cout << "To exit the program enter the characrer ";
     std::cin >> height;

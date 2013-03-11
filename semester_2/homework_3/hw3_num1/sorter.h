@@ -17,12 +17,10 @@ public:
     ///Constructor, that copied sorted array in object.
     Sorter(int *array, int size);
 
-    ///Pure virtual function
     virtual void sort() = 0;
 
     void print();
 
-    ///Virtual distructor
     virtual ~Sorter();
 protected:
     int *inArray;

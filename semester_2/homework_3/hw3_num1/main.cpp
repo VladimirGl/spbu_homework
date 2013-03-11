@@ -54,7 +54,8 @@ int main()
 
     std::cout << "\n\nTo exit the program enter the character ";
     std::cin.get();
-
+    
+    delete[] array;
     delete qsObject;
     delete hpObject;
     delete bbObject;
