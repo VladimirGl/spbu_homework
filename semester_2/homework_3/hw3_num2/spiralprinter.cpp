@@ -22,7 +22,7 @@ SpiralPrinter::SpiralPrinter(int **matrix, int size)
 
 SpiralPrinter::~SpiralPrinter()
 {
-    for (int i = 0; i < matrixSize; i++)
+    for (int i = 0; i <= matrixSize; i++)
         delete[] inMatrix[i];
     delete[] inMatrix;
     delete[] spiralArray;
