@@ -3,7 +3,6 @@
 
 /**
  * @file sorter.h
- * @author  Vladimir Glazachev <glazachev.vladimir@gmail.com>
  *
  * @section DESCRIPTION
  *

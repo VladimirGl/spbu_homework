@@ -5,7 +5,6 @@
 
 /**
  * @file bsort.h
- * @author  Vladimir Glazachev <glazachev.vladimir@gmail.com>
  *
  * @section DESCRIPTION
  *
