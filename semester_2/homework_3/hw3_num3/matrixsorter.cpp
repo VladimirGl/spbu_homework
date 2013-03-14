@@ -44,3 +44,10 @@ void MatrixSorter::print()
         std::cout << std::endl;
     }
 }
+
+MatrixSorter::~MatrixSorter()
+{
+    for (int i = 0; i < width; i++)
+        delete[] matrix[i];
+    delete[] matrix;
+}

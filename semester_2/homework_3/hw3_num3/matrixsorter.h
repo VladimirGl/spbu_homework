@@ -20,6 +20,8 @@ public:
     void sort();
 
     void print();
+
+    ~MatrixSorter();
 protected:
     int **matrix;
     int width;
