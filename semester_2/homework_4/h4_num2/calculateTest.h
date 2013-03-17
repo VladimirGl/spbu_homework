@@ -5,13 +5,22 @@
 #include <QtTest/QtTest>
 #include "calculator.h"
 
+
+/**
+ * @file calculateTest.h
+ *
+ * @section DESCRIPTION
+ *
+ * This is a tests for Calculator class.
+ */
+
 class CalculateTest : public QObject
 {
     Q_OBJECT
 public:
     explicit CalculateTest(QObject *parent = 0):
         QObject(parent) {}
-    
+
 private slots:
     void init()
     {

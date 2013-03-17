@@ -4,6 +4,14 @@
 #include <QWidget>
 #include "calculator.h"
 
+/**
+ * @file widget.h
+ *
+ * @section DESCRIPTION
+ *
+ * This is implementation of Widget class.
+ */
+
 namespace Ui {
 class Widget;
 }

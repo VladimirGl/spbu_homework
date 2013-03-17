@@ -1,6 +1,15 @@
 #ifndef CALCULATOR_H
 #define CALCULATOR_H
 
+
+/**
+ * @file calculator.h
+ *
+ * @section DESCRIPTION
+ *
+ * This is implementation of Calculator class.
+ */
+
 enum Operators
 {
     plus = 0,
