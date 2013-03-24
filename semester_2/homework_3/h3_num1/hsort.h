@@ -15,7 +15,6 @@
 class HSort : public Sorter
 {
 public:
-    ///Calling the base class constructor.
     HSort(int *array, int size):
         Sorter(array, size)
     {}

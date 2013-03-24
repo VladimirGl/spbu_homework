@@ -1,16 +1,20 @@
 #include "listPointer.h"
 
-PointerList::PointerList() {
+PointerList::PointerList()
+{
     memberCounter = 0;
     list = NULL;
 }
 
-bool PointerList::isEmpty() const {
+bool PointerList::isEmpty() const
+{
     return (list == NULL);
 }
 
-void PointerList::addValueInPos(int value, int position) {
-    if (isEmpty()) {
+void PointerList::addValueInPos(int value, int position)
+{
+    if (isEmpty())
+    {
         list = new ListElement(NULL, value);
         memberCounter++;
         return;
@@ -25,10 +29,12 @@ void PointerList::addValueInPos(int value, int position) {
     memberCounter++;
 }
 
-bool PointerList::isContained(int value) const {
+bool PointerList::isContained(int value) const
+{
     ListElement *temp = list;
-    int counter = 0;
-    while (counter <= memberCounter) {
+    int counter = 1;
+    while (counter <= memberCounter)
+    {
         if (temp->value == value)
             return true;
         temp = temp->next;
@@ -37,12 +43,15 @@ bool PointerList::isContained(int value) const {
     return false;
 }
 
-void PointerList::removeValue(int value) {
-    if (!isContained(value)) {
+void PointerList::removeValue(int value)
+{
+    if (!isContained(value))
+    {
         cout << "List does not contain this element\n";
         return;
     }
-    if (list->value == value) {
+    if (list->value == value)
+    {
         ListElement *deletedElement = list;
         list = list->next;
         delete deletedElement;
@@ -58,26 +67,32 @@ void PointerList::removeValue(int value) {
     delete deletedElement;
 }   
     
-int PointerList::length() const {
+int PointerList::length() const
+{
     return (memberCounter);
 }
 
-void PointerList::print() const {
-    if (isEmpty()) {
+void PointerList::print() const
+{
+    if (isEmpty())
+    {
         cout << "List is empty\n";
         return;
     }   
     ListElement *temp = list;
-    while (temp != NULL) {
+    while (temp != NULL)
+    {
         cout << temp->value << " ";
         temp = temp->next;
     }
     cout << endl;
 }
 
-PointerList::~PointerList() {
+PointerList::~PointerList()
+{
     ListElement *temp = list;
-    while (list) {
+    while (list)
+    {
         temp = temp->next;
         delete list;
         list = temp;

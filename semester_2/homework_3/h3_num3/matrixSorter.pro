@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core
+QT       += core \
+    testlib
 
 QT       -= gui
 
@@ -19,4 +20,5 @@ SOURCES += main.cpp \
     matrixsorter.cpp
 
 HEADERS += \
-    matrixsorter.h
+    matrixsorter.h \
+    testSorter.h

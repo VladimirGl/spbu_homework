@@ -15,7 +15,6 @@
 class BSort : public Sorter
 {
 public:
-    ///Calling the base class constructor.
     BSort(int *array, int size):
         Sorter(array, size)
     {}

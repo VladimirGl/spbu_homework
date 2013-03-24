@@ -2,10 +2,20 @@
 #include <float.h>
 
 #include "stackCalculate.h"
+#include "testStack.h"
+#include "testCalculate.h"
 
 using namespace std;
 
 int main() {
+    /*
+    TestStack test1;
+    QTest::qExec(&test1);
+
+    TestCalculate test2;
+    QTest::qExec(&test2);
+    */
+
     cout << "This is the stack-calculator program\n\n"
             "You should choose type of stack (array or pointer)\n"
             "Enter 1 to choose array stack, enter 2 to choose pointer stack\n";
@@ -18,7 +28,7 @@ int main() {
     cout << "\nEnter the expression\n"
             "You can use '+','-','*','/', brackets and integer numbers:\n"
             "Don't use spaces\n";
-    char string[255];
+    char string[255] = {};
     cin >> string;
     PostfixCalculator *object = new PostfixCalculator((StackType)type, string);
     double result = object->calculate();

@@ -15,7 +15,6 @@
 class QSort : public Sorter
 {
 public:
-    ///Calling the base class constructor.
     QSort(int *array, int size):
         Sorter(array, size)
     {}

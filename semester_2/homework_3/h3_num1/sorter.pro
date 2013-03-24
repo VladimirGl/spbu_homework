@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core
+QT       += core \
+    testlib
 
 QT       -= gui
 
@@ -25,4 +26,5 @@ HEADERS += \
     sorter.h \
     qsort.h \
     hsort.h \
-    bsort.h
+    bsort.h \
+    testSorter.h

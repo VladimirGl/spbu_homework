@@ -4,7 +4,8 @@
 
 using namespace std;
 
-class List {
+class List
+{
 public:
     virtual void addValueInPos(int value, int position) = 0;
     virtual void removeValue(int value) = 0;
@@ -12,5 +13,5 @@ public:
     virtual bool isEmpty() const = 0;
     virtual int length() const = 0;
     virtual void print() const = 0;
-    virtual ~List() {};
+    virtual ~List() {}
 };

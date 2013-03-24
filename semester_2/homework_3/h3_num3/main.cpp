@@ -3,6 +3,7 @@
 #include <ctime>
 
 #include "matrixsorter.h"
+#include "testSorter.h"
 
 /**
  * @file main.cpp
@@ -33,7 +34,8 @@ void fillTheMatrix(int **matrix, int width, int height)
 
 int main()
 {
-
+    SorterTest test;
+    QTest::qExec(&test);
     int width = 0;
     int height = 0;
     std::cout << "This is a program, that sorts the columns of matrix of the first element\n"

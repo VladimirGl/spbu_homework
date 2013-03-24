@@ -17,6 +17,11 @@ void Sorter::print()
     std::cout << std::endl;
 }
 
+int *Sorter::returnSortedArray()
+{
+    return inArray;
+}
+
 Sorter::~Sorter()
 {
     delete[] inArray;

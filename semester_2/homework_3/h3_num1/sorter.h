@@ -19,6 +19,7 @@ public:
     virtual void sort() = 0;
 
     void print();
+    int *returnSortedArray();
 
     virtual ~Sorter();
 protected:

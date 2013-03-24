@@ -1,8 +1,9 @@
-#pragma once 
+#pragma once
 
 #include "list.h"
 
-class ArrayList: public List {
+class ArrayList: public List
+{
 public:
     ArrayList();
     void addValueInPos(int value, int position);

@@ -1,9 +1,10 @@
-#pragma once 
+#pragma once
 
 #include "list.h"
 
 
-class PointerList: public List {
+class PointerList: public List
+{
 public:
     PointerList();
     void addValueInPos(int value, int position);
@@ -14,7 +15,8 @@ public:
     void print() const;
     ~PointerList();
 protected:
-    struct ListElement {
+    struct ListElement
+    {
         int value;
         ListElement *next;
             
@@ -23,7 +25,6 @@ protected:
             next(nextElement)
         {}
     };
-    ListElement *createElement(int value, ListElement *pointer);
     ListElement *list;
     int memberCounter;
 };

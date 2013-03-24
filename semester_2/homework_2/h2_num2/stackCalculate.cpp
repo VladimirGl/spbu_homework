@@ -21,7 +21,7 @@ PostfixCalculator::PostfixCalculator(StackType type, char *ch) {
     Parser *string = new Parser(ch);
     isExpression = string->isCorrectExpression();
     delete string;
-    TranslateIntoPolish *object = new TranslateIntoPolish(array, ch);
+    TranslateIntoPolish *object = new TranslateIntoPolish(type, ch);
     expression = object->translator();
     delete string;
 }
