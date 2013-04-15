@@ -113,19 +113,19 @@ void Set<T>::copy(Node *&root)
     }
 }
 
-template<typename T>
+template <typename T>
 bool Set<T>::isEmpty()
 {
     return (tree == NULL);
 }
 
-template<typename T>
+template <typename T>
 void Set<T>::add(T value)
 {
     add(tree, value);
 }
 
-template<typename T>
+template <typename T>
 void Set<T>::add(Node *&root, T value)
 {
     if (root == NULL)
@@ -141,7 +141,7 @@ void Set<T>::add(Node *&root, T value)
         add(root->right, value);
 }
 
-template<typename T>
+template <typename T>
 T Set<T>::removeMin(Node *&root)
 {
     if (root->left == NULL)
@@ -157,13 +157,13 @@ T Set<T>::removeMin(Node *&root)
        return removeMin(root->left);
 }
 
-template<typename T>
+template <typename T>
 void Set<T>::removeValue(T value)
 {
     removeValue(tree, value);
 }
 
-template<typename T>
+template <typename T>
 void Set<T>::removeValue(Node *&root, T value)
 {
     if (root == NULL)
@@ -193,7 +193,7 @@ void Set<T>::removeValue(Node *&root, T value)
         root->value = removeMin(root->right);
 }
 
-template<typename T>
+template <typename T>
 void Set<T>::remove()
 {
     remove(tree);
@@ -211,14 +211,14 @@ void Set<T>::remove(Node *&root)
     }
 }
 
-template<typename T>
+template <typename T>
 void Set<T>::printInorder()
 {
     printInorder(tree);
     std::cout << std::endl;
 }
 
-template<typename T>
+template <typename T>
 void Set<T>::printInorder(Set::Node *root)
 {
     if (root == NULL)
@@ -228,13 +228,13 @@ void Set<T>::printInorder(Set::Node *root)
     printInorder(root->right);
 }
 
-template<typename T>
+template <typename T>
 bool Set<T>::isContained(T value)
 {
     return isContained(tree, value);
 }
 
-template<typename T>
+template <typename T>
 bool Set<T>::isContained(Node *&root, T value)
 {
     if (root == NULL)
