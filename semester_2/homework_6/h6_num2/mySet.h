@@ -146,7 +146,7 @@ T Set<T>::removeMin(Node *&root)
 {
     if (root->left == NULL)
     {
-        int result = root->value;
+        T result = root->value;
         Node *temp = root;
         root = root->right;
         delete temp;
