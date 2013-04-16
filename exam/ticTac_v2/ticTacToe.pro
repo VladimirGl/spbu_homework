@@ -16,6 +16,7 @@ SOURCES += main.cpp\
 
 HEADERS  += widget.h \
     ticTacToePlay.h \
-    testTicTac.h
+    testTicTac.h \
+    compyter.h
 
 FORMS    += widget.ui

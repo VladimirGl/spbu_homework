@@ -4,7 +4,8 @@
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Widget),
-    btnMapper(new QSignalMapper(this))
+    btnMapper(new QSignalMapper(this)),
+    ticTac(new Compyter)
 {
 
     ui->setupUi(this);
@@ -18,6 +19,7 @@ Widget::~Widget()
     delete[] ticTacBtn;
     delete endGame;
     delete btnMapper;
+    delete ticTac;
     delete ui;
 }
 
@@ -64,19 +66,28 @@ void Widget::putSign(QString newChar)
 {
     setBtnStyle(newChar.toInt());
 
-    if (ticTac.isWin() == 0)
+    isEndGame();
+
+    setBtnStyle(ticTac->doStep());
+
+    isEndGame();
+}
+
+void Widget::isEndGame()
+{
+    if (ticTac->isWin() == 0)
         return;
-    if (ticTac.isWin() == 1)
+    if (ticTac->isWin() == 1)
     {
         endGame->setText("X WIN!");
         endGame->setStyleSheet("color:#0000FF");
     }
-    if (ticTac.isWin() == -1)
+    if (ticTac->isWin() == -1)
     {
         endGame->setText("O WIN!");
         endGame->setStyleSheet("color:#FF0000");
     }
-    if (ticTac.isWin() == 2)
+    if (ticTac->isWin() == 2)
     {
         endGame->setText("DRAW!");
         endGame->setStyleSheet("color:#00FF00");
@@ -91,7 +102,7 @@ void Widget::putSign(QString newChar)
 
 void Widget::setBtnStyle(int numOfBtn)
 {
-    QString sign = ticTac.setSign(numOfBtn);
+    QString sign = ticTac->setSign(numOfBtn);
     ticTacBtn[numOfBtn]->setText(sign);
     if (sign == "X")
     {
@@ -109,7 +120,7 @@ void Widget::setBtnStyle(int numOfBtn)
 
 void Widget::reset()
 {
-    ticTac.reset();
+    ticTac->reset();
     for (int i = 0; i < numOfButtons; i++)
     {
         ticTacBtn[i]->setText(" ");

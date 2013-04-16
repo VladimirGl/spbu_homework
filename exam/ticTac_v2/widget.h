@@ -8,6 +8,7 @@
 #include <QtGui/QFont>
 
 #include "ticTacToePlay.h"
+#include "compyter.h"
 
 /**
  * @file widget.h
@@ -34,12 +35,13 @@ private:
     QPushButton *endGame;
     Ui::Widget *ui;
 
-    TicTacToePlay ticTac;
+    Compyter *ticTac;
 
     void createButtons();
     void connectButtons();
 
     void setBtnStyle(int numOfBtn);
+    void isEndGame();
 
     QFont font;
 

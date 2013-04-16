@@ -63,8 +63,6 @@ public:
 
     int isWin()
     {
-        if (counter == 9)
-            return 2;
         if ((array[0] == array[1]) && (array[0] == array[2]) && (array[0] != 0))
             return array[0];
         if ((array[3] == array[4]) && (array[3] == array[5]) && (array[3] != 0))
@@ -83,10 +81,12 @@ public:
             return array[0];
         if ((array[2] == array[4]) && (array[2] == array[6]) && (array[2] != 0))
             return array[2];
+        if (counter == 9)
+            return 2;
         return 0;
     }
 
-private:
+protected:
     bool isX;
     int *array;
 
