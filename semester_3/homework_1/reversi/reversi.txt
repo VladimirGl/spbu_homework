@@ -1,0 +1,25 @@
+class IField
+class Field
+class Cell
+
+class AbstractPlayer
+class RealPlayer
+
+class ComputerPlayer
+class EasyComputer
+class MediumComputer
+class HardComputer
+
+class ReversiGameControler
+
+IField <|.. Field
+Field "1" *-- "64" Cell
+AbstractPlayer <|-- RealPlayer
+AbstractPlayer <|-- ComputerPlayer
+
+ComputerPlayer <|-- EasyComputer
+ComputerPlayer <|-- MediumComputer
+ComputerPlayer <|-- HardComputer
+
+ReversiGameControler "1" *-- "1" Field
+ReversiGameControler "1" *-- "2" AbstractPlayer

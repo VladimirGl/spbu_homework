@@ -1,0 +1,16 @@
+[*] -down-> Idle : On button pressed
+
+State "IdleMode" as Idle {
+	[*] -down-> Waiting
+    Waiting -left-> SetTime : SetTime button pressed
+    SetTime -right-> Waiting : Accept button pressed
+    
+    Waiting -right-> SetMode  : SetMode button pressed
+    SetMode -left-> Waiting : Accept button pressed
+}
+
+Idle -down-> Cook : : Start button pressed && door is closed
+Cook -up-> Idle : Door is opend
+
+Cook -down-> [*] : Timeout || off button pressed
+Idle -down-> [*] : Off button pressed
