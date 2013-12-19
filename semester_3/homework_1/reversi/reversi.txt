@@ -1,16 +1,50 @@
 class IField
-class Field
-class Cell
+class Field {
+ Cell[8][8] field
+ void setCell(coordinates, Color)
+}
+class Cell {
+ bool isEmpty
+ Color color
+ bool isEmpty()
+ bool setColor(Color)
+ bool getColor()
+}
 
-class AbstractPlayer
-class RealPlayer
+class AbstractPlayer {
+ Color color
+ void makeMove()
+ Color getColor()
+}
+class RealPlayer {
+ void makeMove()
+}
 
-class ComputerPlayer
-class EasyComputer
-class MediumComputer
-class HardComputer
+class ComputerPlayer {
+ void makeMove()
+ void calculateMove()
+}
+class EasyComputer{ 
+ void calculateMove()
+ void randomMove()
+}
+class MediumComputer {
+ void calculateMove()
+ void maxLineMove()
+}
+class HardComputer {
+ void calculateMove()
+ void bestMove()
+}
 
-class ReversiGameControler
+class ReversiGameControler {
+ Player playerOne
+ Player playerTwo
+ Field field
+ void startGame()
+ void isGameEnd()
+ void finishGame()
+}
 
 IField <|.. Field
 Field "1" *-- "64" Cell
