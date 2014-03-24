@@ -1,0 +1,3 @@
+primes_list :: [Integer]
+primes_list =  sieve [2..]
+  where sieve (p:xs) = p : sieve [x | x <- xs, x `mod` p > 0]
