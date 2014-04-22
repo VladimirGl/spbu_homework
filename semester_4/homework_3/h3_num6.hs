@@ -1,7 +1,23 @@
-check_brackets :: [Char] -> Bool
-check_brackets = check_brackets' 0 . filter(`elem` "()") 
-  where  
-    check_brackets' c [] = (c == 0)
-    check_brackets' c (x:xs) 
-        | (x == '(') = check_brackets' (c + 1) xs
-        | (x == ')') = check_brackets' (c - 1) xs
+is_pair :: Char -> Char -> Bool
+is_pair '(' ')' = True
+is_pair '[' ']' = True
+is_pair '{' '}' = True
+is_pair _ _ = False
+
+is_open :: Char -> Bool
+is_open ch = (ch == '(') || (ch == '[') || (ch == '{')
+
+is_close :: Char -> Bool
+is_close ch = (ch == ')') || (ch == ']') || (ch == '}')
+
+brackets :: [Char] -> [Char] -> Bool
+brackets [] [] = True
+brackets [] _ = False
+brackets (x : xs) l
+                    | is_open x = brackets xs (x : l)          
+					| is_close x = if ((l /= []) && is_pair (head l) x) then brackets xs (tail l)
+								else False
+                    | otherwise = brackets xs l
+
+is_correct_brackets :: [Char] -> Bool
+is_correct_brackets s = brackets s []
