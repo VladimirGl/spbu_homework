@@ -27,8 +27,8 @@ do_loop list = do
                     putStrLn (show(list))
                     do_loop list
         _   -> do 
-					putStr "Wrong command! Try again.\n"
-					do_loop list
+                    putStr "Wrong command! Try again.\n"
+                    do_loop list
 
 main = do
 	do_loop []
