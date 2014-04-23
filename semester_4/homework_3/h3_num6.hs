@@ -15,8 +15,8 @@ brackets [] [] = True
 brackets [] _ = False
 brackets (x : xs) l
                     | is_open x = brackets xs (x : l)          
-					| is_close x = if ((l /= []) && is_pair (head l) x) then brackets xs (tail l)
-								else False
+                    | is_close x = if ((l /= []) && is_pair (head l) x) then brackets xs (tail l)
+                        else False
                     | otherwise = brackets xs l
 
 is_correct_brackets :: [Char] -> Bool
